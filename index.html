@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Calzados Yakisita</title>
+    <link rel="stylesheet" href="yakisita.css" />
+    <link rel="icon" type="image/png" href="logo.png">
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+<header style="
+  background-color: #3a3131;
+  color: black;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  padding: 20px;
+  gap: 10px;    
+  border: black solid 5px;
+">
+  <a href="https://wa.link/flxurz" target="_blank" style="text-decoration: none;">
+    <img src="descargar-removebg-preview.png" alt="WhatsApp" style="width: 80px; vertical-align: middle;">
+  </a>
+  <span style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size:25px;">ENVIOS A TODO EL PERÚ</span>
+</header><style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .search-filter {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-filter input {
+      background: #1a1a1a;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      padding: 8px 15px;
+      width: 220px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .search-filter input:focus {
+      box-shadow: 0 0 10px #c9a16b;
+    }
+
+    select {
+      background: #1a1a1a;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 10px;
+      outline: none;
+    }
+
+    main {
+      margin: 0;
+      padding: 0;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+      justify-content: center;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .product {
+      background: #1a1a1a;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 10px #222;
+    }
+
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #c9a16b;
+      color: black;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .label.new {
+      background: #e6c17b;
+    }
+
+    .product h3 {
+      font-size: 15px;
+      margin: 10px 0 5px 0;
+    }
+
+    .product span.brand {
+      color: #bbb;
+      font-size: 12px;
+    }
+
+    .sizes {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin: 8px 0;
+    }
+
+    .sizes div {
+      background: #111;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      line-height: 26px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .product p.price {
+      color: #c9a16b;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .catalogo-section {
+      background: #111;
+      text-align: center;
+      font-weight: bold;
+      padding: 12px 0;
+      border-top: 2px solid #222;
+      cursor: pointer;
+      transition: background 0.3s;
+      display: block;
+      text-decoration: none;
+      color: white;
+    }
+
+    .catalogo-section:hover {
+      background: #c9a16b;
+      color: black;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 1280px) {
+      .products {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .product img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="marca1.png" width="120px"/>
+    <div class="search-filter">
+      <input type="text" id="searchInput" placeholder="Buscar sandalias..." />
+      <select id="sortSelect">
+        <option value="default">Ordenar por</option>
+        <option value="low">Precio: menor a mayor</option>
+        <option value="high">Precio: mayor a menor</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <div class="products" id="productList">
+
+      <!-- 🔹 Ejemplo de 12 productos (puedes duplicar más) -->
+      <div class="product" data-price="40.00">
+        <span class="label">OFERTA</span>
+        <img src="plateado tx5 1.jpg" alt="Sandalia Plateada" />
+        <span class="brand">D´Mirella</span>
+        <h3>TACO X5 PLATEADO</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 40.00</p>
+      </div>
+
+      <div class="product" data-price="55.00">
+        <span class="label new">Nuevo</span>
+        <img src="sandalia1.jpg" alt="Sandalia Negra" />
+        <span class="brand">YAKISITA</span>
+        <h3>Sandalia Negra Clásica</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 55.00</p>
+      </div>
+
+      <div class="product" data-price="60.00">
+        <span class="label">Destacado</span>
+        <img src="sandalia2.jpg" alt="Sandalia Dorada" />
+        <span class="brand">YAKISITA</span>
+        <h3>Sandalia Dorada Fiesta</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 60.00</p>
+      </div>
+
+      <div class="product" data-price="42.00">
+        <span class="label">Destacado</span>
+        <img src="sandalia3.jpg" alt="Sandalia Blanca" />
+        <span class="brand">YAKISITA</span>
+        <h3>Sandalia Blanca Simple</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 42.00</p>
+      </div>
+
+      <div class="product" data-price="58.00">
+        <span class="label new">Nuevo</span>
+        <img src="sandalia4.jpg" alt="Sandalia Verde" />
+        <span class="brand">YAKISITA</span>
+        <h3>Sandalia Verde Oliva</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 58.00</p>
+      </div>
+
+      <div class="product" data-price="65.00">
+        <span class="label">Nuevo</span>
+        <img src="sandalia5.jpg" alt="Sandalia Plata" />
+        <span class="brand">YAKISITA</span>
+        <h3>Sandalia Plata Brillante</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 65.00</p>
+      </div>
+
+      <!-- puedes duplicar más productos abajo -->
+    </div>
+
+    <a href="catalogo-dama.html" class="catalogo-section">CATÁLOGO DAMA</a>
+    <a href="catalogo-nina.html" class="catalogo-section">CATÁLOGO NIÑA</a>
+  </main>
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const products = document.querySelectorAll(".product");
+    const productList = document.getElementById("productList");
+
+    // Buscador
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      products.forEach(product => {
+        const name = product.querySelector("h3").textContent.toLowerCase();
+        product.style.display = name.includes(query) ? "block" : "none";
+      });
+    });
+
+    // Ordenar por precio
+    const sortSelect = document.getElementById("sortSelect");
+    sortSelect.addEventListener("change", () => {
+      const value = sortSelect.value;
+      const sorted = Array.from(products).sort((a, b) => {
+        const priceA = parseFloat(a.dataset.price);
+        const priceB = parseFloat(b.dataset.price);
+        if (value === "low") return priceA - priceB;
+        if (value === "high") return priceB - priceA;
+        return 0;
+      });
+      sorted.forEach(p => productList.appendChild(p));
+    });
+  </script>
+</body>
+</html>
